@@ -63,8 +63,24 @@ namespace Calculator_2._0
         
         public override void DisplayRes()
         {
+            MatrixConsequence(Result);
             calculation = $"{ Operand1} / ({Operand2}*2) = {Result} ";
             Console.WriteLine(calculation);
+        }
+        public void MatrixConsequence(double Result)
+        {
+            string consequence;
+
+            if (Result <= 18.5)
+                consequence = "Underweight";
+            else if (Result > 18.5 && Result <= 25)
+                consequence = "Normal weight";
+            else if (Result > 25 && Result <= 30)
+                consequence = "Overweight";
+            else
+                consequence = "Obese";
+
+            Console.WriteLine(consequence);
         }
     }
     
@@ -73,7 +89,6 @@ namespace Calculator_2._0
         public override string Label => "m";
         public override void Calculate()
         {
-           
            int[,] A = new int[Matrix1.GetLength(0), Matrix2.GetLength(1)];
 
             for (int i = 0; i < Matrix1.GetLength(0); i++)
@@ -87,7 +102,7 @@ namespace Calculator_2._0
                 }
             }
             MatrixResult = A;
-
+            
         }
         public override void DisplayRes()
         {
@@ -95,12 +110,7 @@ namespace Calculator_2._0
 
             Console.WriteLine("result");
             matrixPrint.Print(MatrixResult);
-
             calculation = $"{ MatrixResult}";
-            
-
         }
-
     }
-   
 }

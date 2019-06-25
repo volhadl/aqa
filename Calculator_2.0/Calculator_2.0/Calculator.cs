@@ -59,7 +59,7 @@ namespace Calculator_2._0
                    // mainMenu.OperationSign.Calculate();
                     //mainMenu.OperationSign.DisplayRes();
                     
-                   // historyManager.AddLog(mainMenu.OperationSign.calculation);
+                    historyManager.AddLog(mainMenu.OperationSign.calculation);
 
                    // mathRunnerMenu.UseLastValue = true;
                     //mathMatrixRunnerMenu.UseLastValue = true;
@@ -87,6 +87,7 @@ namespace Calculator_2._0
                     {
                         mainMenu.OperationSign.Result = 0;
                         mathRunnerMenu.UseLastValue = false;
+                        mathMatrixRunnerMenu.UseLastValue = false;
                     }
 
                 }

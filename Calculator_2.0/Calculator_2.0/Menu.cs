@@ -14,9 +14,6 @@ namespace Calculator_2._0
         public int[,] LastResultMatrix { get; set; }
 
 
-
-
-       
         string[] Options = new string[9] { "+", "-", "*", "/", "b", "m", "h", "c", "q" };
 
         protected bool ValidateInputs(string input) => Options.Any(i => i.Equals(input, StringComparison.InvariantCultureIgnoreCase));
