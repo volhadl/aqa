@@ -56,19 +56,7 @@ namespace Calculator_2._0
 
                     }
                     
-                   // mainMenu.OperationSign.Calculate();
-                    //mainMenu.OperationSign.DisplayRes();
-                    
                     historyManager.AddLog(mainMenu.OperationSign.calculation);
-
-                   // mathRunnerMenu.UseLastValue = true;
-                    //mathMatrixRunnerMenu.UseLastValue = true;
-
-
-                  //  Console.WriteLine("Last result was saved as a first operand, for clear input 'c'");
-                   // mathRunnerMenu.LastResult = mainMenu.OperationSign.Result;
-                    
-                    //mathMatrixRunnerMenu.LastResultMatrix = mainMenu.OperationSign.MatrixResult;
 
                 }
                 catch (ExitException e)
