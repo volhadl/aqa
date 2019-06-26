@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Collections;
 
 namespace Calculator_2._0
 {
@@ -23,6 +24,7 @@ namespace Calculator_2._0
 
         public void start()
         {
+            
             bool exit = false;
 
             while (!exit)
@@ -55,9 +57,14 @@ namespace Calculator_2._0
                         mathRunnerMenu.LastResult = mainMenu.OperationSign.Result;
 
                     }
-                    
-                    historyManager.AddLog(mainMenu.OperationSign.calculation);
 
+                //    newAL.Add(mainMenu.OperationSign.calculation);
+
+                }
+                catch (NullReferenceException e)
+                {
+                    Console.WriteLine(e.Message);
+                    
                 }
                 catch (ExitException e)
                 {
@@ -81,12 +88,13 @@ namespace Calculator_2._0
                 }
                 catch (HistoryException )
                 {
-                  historyManager.PrintLog();
+                  //historyManager.ShowValues(newAL);
                    
                 }
             }
         }
     }
+   
 }
 
 

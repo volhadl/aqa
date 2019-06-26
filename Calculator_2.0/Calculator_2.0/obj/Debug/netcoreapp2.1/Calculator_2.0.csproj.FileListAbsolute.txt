@@ -25,9 +25,9 @@ C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\bin
 C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\bin\Debug\netcoreapp2.1\Calculator_2.0.runtimeconfig.dev.json
 C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\bin\Debug\netcoreapp2.1\Calculator_2.0.dll
 C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\bin\Debug\netcoreapp2.1\Calculator_2.0.pdb
-C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\obj\Debug\netcoreapp2.1\Calculator_2.0.csprojAssemblyReference.cache
 C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\obj\Debug\netcoreapp2.1\Calculator_2.0.csproj.CoreCompileInputs.cache
 C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\obj\Debug\netcoreapp2.1\Calculator_2.0.AssemblyInfoInputs.cache
 C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\obj\Debug\netcoreapp2.1\Calculator_2.0.AssemblyInfo.cs
 C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\obj\Debug\netcoreapp2.1\Calculator_2.0.dll
 C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\obj\Debug\netcoreapp2.1\Calculator_2.0.pdb
+C:\Users\volha.dluhakanskaya\Desktop\AQA tasks\Calculator_2.0\Calculator_2.0\obj\Debug\netcoreapp2.1\Calculator_2.0.csprojAssemblyReference.cache

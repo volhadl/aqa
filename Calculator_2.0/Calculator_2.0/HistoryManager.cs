@@ -9,8 +9,8 @@ namespace Calculator_2._0
     public class HistoryManager
     {
 
-
-        List<string> history = new List<string>();
+        /*
+         * List<string> history = new List<string>();
 
         public void AddLog(string record) => history.Add(record);
 
@@ -24,18 +24,16 @@ namespace Calculator_2._0
                 Console.WriteLine("List is either null or empty");
         }
     }
-}
-        /*
-          ArrayList list = new ArrayList();
-        public void PrintLog()
+}*/
+
+        public  void ShowValues(IEnumerable myList)
         {
-            foreach (object o in list)
-            {
-                Console.WriteLine(o);
-            }
+            foreach (Object obj in myList)
+                Console.Write("   {0}", obj);
+            Console.WriteLine();
         }
     }
-}*/
+}
     /*
     public List<BaseOperation> History { get; set; }
 

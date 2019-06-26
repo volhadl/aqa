@@ -4,13 +4,11 @@ using System.Collections.Generic;
 
 namespace Calculator_2._0
 {
-    /// <summary>
-    /// coz it's abstract class i cant create object of it 
-    /// 
-    /// </summary>
-    
+  
     public abstract class BaseOperation
     {
+      public  ArrayList newAL = new ArrayList();
+
         public double Operand1 { get; set; }
         public double Operand2 { get; set; }
         public double Result { get; set; }
@@ -21,14 +19,17 @@ namespace Calculator_2._0
 
         public abstract string Label { get;  }
         public abstract void Calculate();
-        public virtual void DisplayRes()
-        {
-            calculation = $"{ Operand1 } { Label} { Operand2} = { Result}";
-            Console.WriteLine(calculation);
+        public abstract void DisplayRes();
+      
+            //calculation = $"{ Operand1 } { Label} { Operand2} = { Result}";
+           // Console.WriteLine(calculation);
+           // newAL.Add(calculation);
+          //  newAL.Add(MatrixResult);
+
             //var list = new ArrayList();
-           // list.Add($"{ Operand1 } { Label} { Operand2} = { Result}");
-           
-        }
+            // list.Add($"{ Operand1 } { Label} { Operand2} = { Result}");
+
+       // }
         
     }
     
@@ -37,36 +38,45 @@ namespace Calculator_2._0
     {
         public override string Label => "+";
         public override void Calculate() => Result = Operand1 + Operand2;
-       
+        public override void DisplayRes() => newAL.Add(Result);
+
     }
     public class Subtract : BaseOperation
     {
         public override string Label => "-";
         public override void Calculate() => Result = Operand1 - Operand2;
+        public override void DisplayRes() => newAL.Add(Result);
     }
     public class Multiply : BaseOperation
     {
         public override string Label => "*";
         public override void Calculate() => Result = Operand1 * Operand2;
-        
+        public override void DisplayRes() => newAL.Add(Result);
+
     }
     public class Divide : BaseOperation
     {
         public override string Label => "/";
-        public override void Calculate() => Result = Operand1 / Operand2;
-
+        public override void Calculate()
+        {
+            if (Operand2 == 0)
+                throw new NullReferenceException("You cannot devide on 0");
+            Result = Operand1 / Operand2;
+        }
+        public override void DisplayRes() => newAL.Add(Result);
     }
     public class BMI : BaseOperation
     {
         public override string Label => "b";
         public override void Calculate() => Result = Math.Round(Operand1 / Math.Pow(Operand2, 2), 2);
         
+        /*
         public override void DisplayRes()
         {
             MatrixConsequence(Result);
             calculation = $"{ Operand1} / ({Operand2}*2) = {Result} ";
             Console.WriteLine(calculation);
-        }
+        }*/
         public void MatrixConsequence(double Result)
         {
             string consequence;
@@ -82,11 +92,14 @@ namespace Calculator_2._0
 
             Console.WriteLine(consequence);
         }
+        public override void DisplayRes() => newAL.Add(Result);
     }
     
     public class MatrixMultiply : BaseOperation
     {
+
         public override string Label => "m";
+        
         public override void Calculate()
         {
            int[,] A = new int[Matrix1.GetLength(0), Matrix2.GetLength(1)];
@@ -102,15 +115,22 @@ namespace Calculator_2._0
                 }
             }
             MatrixResult = A;
+           
             
         }
+        public override void DisplayRes() => newAL.Add(MatrixResult);
+        /*
         public override void DisplayRes()
         {
             var matrixPrint = new MathMatrixRunnerMenu();
 
             Console.WriteLine("result");
+            Console.WriteLine("was");
             matrixPrint.Print(MatrixResult);
-            calculation = $"{ MatrixResult}";
-        }
+            // string A = matrixPrint.PrintHistory(MatrixResult);
+            //  Console.WriteLine(A);
+            //calculation = 
+            
+        }*/
     }
 }

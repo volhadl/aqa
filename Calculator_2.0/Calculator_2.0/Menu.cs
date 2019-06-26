@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -185,7 +187,17 @@ namespace Calculator_2._0
                 Console.WriteLine();
             }
         }
-        
+
+        /*
+            public string PrintHistory(int[,] a)
+            {
+            
+            
+            //   Console.WriteLine(string.Join("|", s));
+            return s;
+            }*/
+    
+
         class MatrixCl
         {
             public int row { get; set; }
