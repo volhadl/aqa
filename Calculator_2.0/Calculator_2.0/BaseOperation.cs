@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Calculator_2._0
 {
-  
+    /// <summary>
+    /// coz it's abstract class i cant create object of it 
+    /// 
+    /// </summary>
+
     public abstract class BaseOperation
     {
-      public  ArrayList newAL = new ArrayList();
-
         public double Operand1 { get; set; }
         public double Operand2 { get; set; }
         public double Result { get; set; }
@@ -17,41 +21,35 @@ namespace Calculator_2._0
         public int[,] MatrixResult { get; set; }
         public string calculation { get; set; }
 
-        public abstract string Label { get;  }
+        public abstract string Label { get; }
         public abstract void Calculate();
-        public abstract void DisplayRes();
-      
-            //calculation = $"{ Operand1 } { Label} { Operand2} = { Result}";
-           // Console.WriteLine(calculation);
-           // newAL.Add(calculation);
-          //  newAL.Add(MatrixResult);
-
+        public virtual void DisplayRes()
+        {
+            calculation = $"{ Operand1 } { Label} { Operand2} = { Result}";
+            Console.WriteLine(calculation);
             //var list = new ArrayList();
             // list.Add($"{ Operand1 } { Label} { Operand2} = { Result}");
 
-       // }
-        
+        }
+
     }
-    
+
 
     public class Add : BaseOperation
     {
         public override string Label => "+";
         public override void Calculate() => Result = Operand1 + Operand2;
-        public override void DisplayRes() => newAL.Add(Result);
 
     }
     public class Subtract : BaseOperation
     {
         public override string Label => "-";
         public override void Calculate() => Result = Operand1 - Operand2;
-        public override void DisplayRes() => newAL.Add(Result);
     }
     public class Multiply : BaseOperation
     {
         public override string Label => "*";
         public override void Calculate() => Result = Operand1 * Operand2;
-        public override void DisplayRes() => newAL.Add(Result);
 
     }
     public class Divide : BaseOperation
@@ -63,21 +61,20 @@ namespace Calculator_2._0
                 throw new NullReferenceException("You cannot devide on 0");
             Result = Operand1 / Operand2;
         }
-        public override void DisplayRes() => newAL.Add(Result);
+
     }
     public class BMI : BaseOperation
     {
         public override string Label => "b";
         public override void Calculate() => Result = Math.Round(Operand1 / Math.Pow(Operand2, 2), 2);
-        
-        /*
+
         public override void DisplayRes()
         {
-            MatrixConsequence(Result);
+            BMIConsequence(Result);
             calculation = $"{ Operand1} / ({Operand2}*2) = {Result} ";
             Console.WriteLine(calculation);
-        }*/
-        public void MatrixConsequence(double Result)
+        }
+        public string BMIConsequence(double Result)
         {
             string consequence;
 
@@ -91,18 +88,16 @@ namespace Calculator_2._0
                 consequence = "Obese";
 
             Console.WriteLine(consequence);
+            return consequence;
         }
-        public override void DisplayRes() => newAL.Add(Result);
     }
-    
+
     public class MatrixMultiply : BaseOperation
     {
-
         public override string Label => "m";
-        
         public override void Calculate()
         {
-           int[,] A = new int[Matrix1.GetLength(0), Matrix2.GetLength(1)];
+            int[,] A = new int[Matrix1.GetLength(0), Matrix2.GetLength(1)];
 
             for (int i = 0; i < Matrix1.GetLength(0); i++)
             {
@@ -114,13 +109,32 @@ namespace Calculator_2._0
                     }
                 }
             }
-
-
-            string value = String.Concat<char>(A);
-
-
+            MatrixResult = A;
+            Console.WriteLine("Result: ");
+            calculation = ConvertArrayToString(MatrixResult);
         }
-        public override void DisplayRes() => newAL.Add(value);
-        
+        public override void DisplayRes()
+        {
+            Console.WriteLine(calculation);
+        }
+        public string ConvertArrayToString(int[,] MatrixResult)
+        {
+           var stringarray = "";
+            for (int i = 0; i < MatrixResult.GetLength(0); i++)
+            {
+                if (i > 0) stringarray += ',';
+                stringarray += '{';
+                for (int j = 0; j < MatrixResult.GetLength(1); j++)
+                {
+                    if (j > 0) stringarray += ',';
+                    stringarray += MatrixResult[i, j];
+                }
+                stringarray += '}';
+
+            }
+            return stringarray;
+        } 
+
     }
 }
+       

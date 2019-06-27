@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -173,31 +171,20 @@ namespace Calculator_2._0
                     A[i, j] = int.Parse(Console.ReadLine());
                 }
             }
-            Print(A);
-            return A;
-        }
-        public void Print(int[,] a)
-        {
-            for (int i = 0; i < a.GetLength(0); i++)
+            // for print
+            for (int i = 0; i < A.GetLength(0); i++)
             {
-                for (int j = 0; j < a.GetLength(1); j++)
+                for (int j = 0; j < A.GetLength(1); j++)
                 {
-                    Console.Write("{0} ", a[i, j]);
+                    Console.Write("{0} ", A[i, j]);
                 }
                 Console.WriteLine();
             }
+
+            return A;
         }
-
-        /*
-            public string PrintHistory(int[,] a)
-            {
-            
-            
-            //   Console.WriteLine(string.Join("|", s));
-            return s;
-            }*/
-    
-
+        
+        
         class MatrixCl
         {
             public int row { get; set; }
