@@ -6,11 +6,6 @@ using System.Text;
 
 namespace Calculator_2._0
 {
-    /// <summary>
-    /// coz it's abstract class i cant create object of it 
-    /// 
-    /// </summary>
-
     public abstract class BaseOperation
     {
         public double Operand1 { get; set; }
