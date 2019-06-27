@@ -114,23 +114,13 @@ namespace Calculator_2._0
                     }
                 }
             }
-            MatrixResult = A;
-           
-            
-        }
-        public override void DisplayRes() => newAL.Add(MatrixResult);
-        /*
-        public override void DisplayRes()
-        {
-            var matrixPrint = new MathMatrixRunnerMenu();
 
-            Console.WriteLine("result");
-            Console.WriteLine("was");
-            matrixPrint.Print(MatrixResult);
-            // string A = matrixPrint.PrintHistory(MatrixResult);
-            //  Console.WriteLine(A);
-            //calculation = 
-            
-        }*/
+
+            string value = String.Concat<char>(A);
+
+
+        }
+        public override void DisplayRes() => newAL.Add(value);
+        
     }
 }
