@@ -27,9 +27,6 @@ namespace Calculator_2._0
         {
             calculation = $"{ Operand1 } { Label} { Operand2} = { Result}";
             Console.WriteLine(calculation);
-            //var list = new ArrayList();
-            // list.Add($"{ Operand1 } { Label} { Operand2} = { Result}");
-
         }
 
     }
@@ -110,7 +107,6 @@ namespace Calculator_2._0
                 }
             }
             MatrixResult = A;
-            Console.WriteLine("Result: ");
             calculation = ConvertArrayToString(MatrixResult);
         }
         public override void DisplayRes()
@@ -119,7 +115,7 @@ namespace Calculator_2._0
         }
         public string ConvertArrayToString(int[,] MatrixResult)
         {
-           var stringarray = "";
+           var stringarray = "matrix multiplication result ";
             for (int i = 0; i < MatrixResult.GetLength(0); i++)
             {
                 if (i > 0) stringarray += ',';
