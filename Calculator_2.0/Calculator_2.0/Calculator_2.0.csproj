@@ -6,4 +6,8 @@
     <RootNamespace>Calculator_2._0</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

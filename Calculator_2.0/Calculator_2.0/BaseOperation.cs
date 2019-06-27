@@ -115,7 +115,7 @@ namespace Calculator_2._0
         }
         public string ConvertArrayToString(int[,] MatrixResult)
         {
-           var stringarray = "matrix multiplication result ";
+           var stringarray = "matrix multiplication result: ";
             for (int i = 0; i < MatrixResult.GetLength(0); i++)
             {
                 if (i > 0) stringarray += ',';
