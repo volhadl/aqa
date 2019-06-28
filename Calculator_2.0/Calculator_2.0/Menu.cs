@@ -172,6 +172,7 @@ namespace Calculator_2._0
                 }
             }
             // for print
+            /*
             for (int i = 0; i < A.GetLength(0); i++)
             {
                 for (int j = 0; j < A.GetLength(1); j++)
@@ -180,7 +181,7 @@ namespace Calculator_2._0
                 }
                 Console.WriteLine();
             }
-
+            */
             return A;
         }
         
