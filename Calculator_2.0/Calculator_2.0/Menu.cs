@@ -39,7 +39,7 @@ namespace Calculator_2._0
 
         public class MainMenu : BaseMenu
         {
-            private string GetInputForOperation()
+            private string GetInputForOperation(string input = null)
             {
                 Console.WriteLine("\n Select operation: '+'\t '-'\t '*'\t '/' " +
                                                      " \n \t\t  'b' - for count BMI," +
@@ -47,7 +47,12 @@ namespace Calculator_2._0
                                                      " \n \t'c' to clear last value" +
                                                      " \t\t 'h' - display history" +
                                                      " \t\t'q' to exit");
-                string input = Console.ReadLine();
+
+            if (input == null)
+                input = Console.ReadLine();
+            if (!ValidateInputs(input))
+                throw new InvalidInputException("There is no such function. Please try again."); ;
+
                 quitProgram(input);
                 clearLastResult(input);
                 historyProgram(input);
@@ -78,11 +83,6 @@ namespace Calculator_2._0
                     case ("m"):
                         resultOperation = new MatrixMultiply();
                         break;
-                   
-                default:
-                    throw new InvalidInputException("Operation you entered is not recognized. Please, try again");
-
-
             }
                 return resultOperation;
             }
@@ -171,17 +171,7 @@ namespace Calculator_2._0
                     A[i, j] = int.Parse(Console.ReadLine());
                 }
             }
-            // for print
-            /*
-            for (int i = 0; i < A.GetLength(0); i++)
-            {
-                for (int j = 0; j < A.GetLength(1); j++)
-                {
-                    Console.Write("{0} ", A[i, j]);
-                }
-                Console.WriteLine();
-            }
-            */
+            
             return A;
         }
         
@@ -235,20 +225,18 @@ namespace Calculator_2._0
     { }
     public class HistoryException : Exception
     {
-        public override string Message => "Emty list";
+        
     }
 
     public class InvalidInputException : Exception
     {
-        public InvalidInputException()
-        {
-        }
+        
 
         public InvalidInputException(string message) : base(message)
         {
         }
 
-        public override string Message => "Input is not valid. Try again";
+        
     }
 
 }

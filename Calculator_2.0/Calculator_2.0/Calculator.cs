@@ -69,6 +69,7 @@ namespace Calculator_2._0
                     Console.WriteLine(e.Message);
                     exit = true;
                 }
+               
                 catch (InvalidInputException e)
                 {
                     Console.WriteLine(e.Message);
@@ -84,9 +85,9 @@ namespace Calculator_2._0
                     }
 
                 }
-                catch (HistoryException )
+                catch (HistoryException)
                 {
-                  historyManager.PrintLog();
+                    historyManager.PrintLog();
                    
                 }
             }
