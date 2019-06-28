@@ -14,4 +14,68 @@
     <PackageReference Include="Protogame" Version="6.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\volha.dluhakanskaya\.nuget\packages\protogame\6.0.4\build\..\copyContent\GameActivity.cs" />
+  </ItemGroup>
+
 </Project>

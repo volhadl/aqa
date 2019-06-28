@@ -36,7 +36,7 @@ namespace Calculator_2._0
                         mathRunnerMenu.SetInputsForBMI(mainMenu.OperationSign);
                         mainMenu.OperationSign.Calculate();
                         mainMenu.OperationSign.DisplayRes();
-                        
+
                     }
                     else if (mainMenu.OperationSign.Label == "m")
                     {
@@ -55,25 +55,26 @@ namespace Calculator_2._0
                         mathRunnerMenu.LastResult = mainMenu.OperationSign.Result;
 
                     }
-                    
+
                     historyManager.AddLog(mainMenu.OperationSign.calculation);
 
                 }
                 catch (NullReferenceException e)
                 {
                     Console.WriteLine(e.Message);
-                   
+
                 }
                 catch (ExitException e)
                 {
                     Console.WriteLine(e.Message);
                     exit = true;
                 }
+
                 catch (InvalidInputException e)
                 {
                     Console.WriteLine(e.Message);
                 }
-                catch (ClearMemoryException )
+                catch (ClearMemoryException)
                 {
 
                     if (mainMenu.OperationSign != null)
@@ -84,14 +85,12 @@ namespace Calculator_2._0
                     }
 
                 }
-                catch (HistoryException )
+                catch (HistoryException)
                 {
-                  historyManager.PrintLog();
-                   
+                    historyManager.PrintLog();
+
                 }
             }
         }
     }
 }
-
-

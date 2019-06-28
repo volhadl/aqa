@@ -17,7 +17,7 @@ namespace Calculator_2._0
         string[] Options = new string[9] { "+", "-", "*", "/", "b", "m", "h", "c", "q" };
 
         internal bool ValidateInputs(string input) => Options.Any(i => i.Equals(input, StringComparison.InvariantCultureIgnoreCase));
-        
+
         public void clearLastResult(string input)
         {
             if (input.Equals("c", StringComparison.InvariantCultureIgnoreCase))
@@ -37,70 +37,64 @@ namespace Calculator_2._0
 
     }
 
-        public class MainMenu : BaseMenu
+    public class MainMenu : BaseMenu
+    {
+        internal string GetInputForOperation(string input = null)
         {
-            internal string GetInputForOperation(string input = null)
-            {
-            
-                Console.WriteLine("Select operation: '+'\t '-'\t '*'\t '/' " +
-                                                     "\n \t\t  'b' - for count BMI," +
-                                                     "\n \t\t  'm' - for multiply matrixes" +
-                                                     "\n \t'c' to clear last value" +
-                                                     "\t\t 'h' - display history" +
-                                                     "\t\t'q' to exit");
+            Console.WriteLine("\n Select operation: '+'\t '-'\t '*'\t '/' " +
+                                                 " \n \t\t  'b' - for count BMI," +
+                                                 " \n \t\t  'm' - for multiply matrixes" +
+                                                 " \n \t'c' to clear last value" +
+                                                 " \t\t 'h' - display history" +
+                                                 " \t\t'q' to exit");
 
-                    if (input == null)
-                    input = Console.ReadLine();
-                    if (!ValidateInputs(input))
-                    throw new InvalidInputException("There is no such function"); ;
+            if (input == null)
+                input = Console.ReadLine();
+            if (!ValidateInputs(input))
+                throw new InvalidInputException("There is no such function. Please try again."); ;
 
-                quitProgram(input);
-                clearLastResult(input);
-                historyProgram(input);
-                return input.ToLower();
-            }
-
-
-            private BaseOperation OperationType(string operation)
-            {
-                BaseOperation resultOperation = null;
-                switch (operation)
-                {
-                    case ("+"):
-                        resultOperation = new Add();
-                        break;
-                    case ("-"):
-                        resultOperation = new Subtract();
-                        break;
-                    case ("*"):
-                        resultOperation = new Multiply();
-                        break;
-                    case ("/"):
-                        resultOperation = new Divide();
-                        break;
-                    case ("b"):
-                        resultOperation = new BMI();
-                        break;
-                    case ("m"):
-                        resultOperation = new MatrixMultiply();
-                        break;
-                   
-                default:
-                    throw new InvalidInputException("Operation you entered is not recognized. Please, try again");
-
-
-            }
-                return resultOperation;
-            }
-
-            public void MainMenuStart()
-            {
-                var operationInput = GetInputForOperation();
-                 OperationSign = OperationType(operationInput);
-            }
-
+            quitProgram(input);
+            clearLastResult(input);
+            historyProgram(input);
+            return input.ToLower();
         }
-   
+
+
+        private BaseOperation OperationType(string operation)
+        {
+            BaseOperation resultOperation = null;
+            switch (operation)
+            {
+                case ("+"):
+                    resultOperation = new Add();
+                    break;
+                case ("-"):
+                    resultOperation = new Subtract();
+                    break;
+                case ("*"):
+                    resultOperation = new Multiply();
+                    break;
+                case ("/"):
+                    resultOperation = new Divide();
+                    break;
+                case ("b"):
+                    resultOperation = new BMI();
+                    break;
+                case ("m"):
+                    resultOperation = new MatrixMultiply();
+                    break;
+            }
+            return resultOperation;
+        }
+
+        public void MainMenuStart()
+        {
+            var operationInput = GetInputForOperation();
+            OperationSign = OperationType(operationInput);
+        }
+
+    }
+
 
     public class MathRunnerMenu : BaseMenu
     {
@@ -112,28 +106,28 @@ namespace Calculator_2._0
             {
                 operation.Operand1 = LastResult;
             }
-            else 
+            else
             {
-                    input_1 = GetOperand("Input 1st number: ");
-                    operation.Operand1 = input_1;
+                input_1 = GetOperand("Input 1st number: ");
+                operation.Operand1 = input_1;
             }
             input_2 = GetOperand("Input 2nd number: ");
             operation.Operand2 = input_2;
         }
 
-            public void SetInputsForBMI (BaseOperation operation)
+        public void SetInputsForBMI(BaseOperation operation)
         {
-                input_1 = GetOperand("Input YOUR weight in kg: ");
-                operation.Operand1 = input_1;
+            input_1 = GetOperand("Input YOUR weight in kg: ");
+            operation.Operand1 = input_1;
 
-                input_2 = GetOperand("Input YOUR height in m: ");
-                operation.Operand2 = input_2;
+            input_2 = GetOperand("Input YOUR height in m: ");
+            operation.Operand2 = input_2;
         }
-       
+
 
         public double GetOperand(string input)
         {
-            
+
             double OperandInt;
             Console.WriteLine(input);
             string operand = Console.ReadLine();  //get new
@@ -144,12 +138,12 @@ namespace Calculator_2._0
                 operand = Console.ReadLine();
             }
             return double.Parse(operand);
-           
+
         }
     }
     public class MathMatrixRunnerMenu : BaseMenu
     {
-        
+
         public int GetOperandInt(string input)
         {
             int OperandInt;
@@ -177,20 +171,11 @@ namespace Calculator_2._0
                     A[i, j] = int.Parse(Console.ReadLine());
                 }
             }
-            // for print
-            for (int i = 0; i < A.GetLength(0); i++)
-            {
-                for (int j = 0; j < A.GetLength(1); j++)
-                {
-                    Console.Write("{0} ", A[i, j]);
-                }
-                Console.WriteLine();
-            }
 
             return A;
         }
-        
-        
+
+
         class MatrixCl
         {
             public int row { get; set; }
@@ -237,24 +222,23 @@ namespace Calculator_2._0
     }
 
     public class ClearMemoryException : Exception
-    { }
+    {
+
+    }
     public class HistoryException : Exception
     {
-        public override string Message => "Emty list";
+
     }
 
     public class InvalidInputException : Exception
     {
-        public InvalidInputException()
-        {
-        }
+
 
         public InvalidInputException(string message) : base(message)
         {
         }
 
-        public override string Message => "Input is not valid. Try again";
+
     }
 
 }
-

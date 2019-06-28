@@ -20,7 +20,7 @@ namespace Calculator_2._0
         public abstract void Calculate();
         public virtual void DisplayRes()
         {
-            calculation = $"{ Operand1 } { Label} { Operand2} = { Result}";
+            calculation = $"Mathematical result : { Operand1 } { Label} { Operand2} = { Result}";
             Console.WriteLine(calculation);
         }
 
@@ -62,8 +62,8 @@ namespace Calculator_2._0
 
         public override void DisplayRes()
         {
-            BMIConsequence(Result);
-            calculation = $"{ Operand1} / ({Operand2}*2) = {Result} ";
+            string consequence = BMIConsequence(Result);
+            calculation = $"BMI result : { Operand1} / ({Operand2}*2) = {Result} \t It's {consequence} ";
             Console.WriteLine(calculation);
         }
         public string BMIConsequence(double Result)
@@ -79,7 +79,7 @@ namespace Calculator_2._0
             else
                 consequence = "Obese";
 
-            Console.WriteLine(consequence);
+            // Console.WriteLine(consequence);
             return consequence;
         }
     }
@@ -102,15 +102,46 @@ namespace Calculator_2._0
                 }
             }
             MatrixResult = A;
-            calculation = ConvertArrayToString(MatrixResult);
+            calculation = ConvertArrayToString(Matrix1, Matrix2, MatrixResult);
         }
         public override void DisplayRes()
         {
             Console.WriteLine(calculation);
         }
-        public string ConvertArrayToString(int[,] MatrixResult)
+        public string ConvertArrayToString(int[,] Matrix1, int[,] Matrix2, int[,] MatrixResult)
         {
-           var stringarray = "matrix multiplication result: ";
+            var stringarray = "matrix multiplication result : ";
+
+            for (int i = 0; i < Matrix1.GetLength(0); i++)
+            {
+                if (i > 0) stringarray += ',';
+                stringarray += '{';
+                for (int j = 0; j < Matrix1.GetLength(1); j++)
+                {
+                    if (j > 0) stringarray += ',';
+                    stringarray += Matrix1[i, j];
+                }
+                stringarray += '}';
+
+            }
+
+            stringarray += " * ";
+
+            for (int i = 0; i < Matrix2.GetLength(0); i++)
+            {
+                if (i > 0) stringarray += ',';
+                stringarray += '{';
+                for (int j = 0; j < Matrix2.GetLength(1); j++)
+                {
+                    if (j > 0) stringarray += ',';
+                    stringarray += Matrix2[i, j];
+                }
+                stringarray += '}';
+
+            }
+
+            stringarray += " = ";
+
             for (int i = 0; i < MatrixResult.GetLength(0); i++)
             {
                 if (i > 0) stringarray += ',';
@@ -124,8 +155,7 @@ namespace Calculator_2._0
 
             }
             return stringarray;
-        } 
+        }
 
     }
 }
-       

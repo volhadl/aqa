@@ -25,4 +25,3 @@ namespace Calculator_2._0
         }
     }
 }
-       
