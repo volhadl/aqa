@@ -41,12 +41,12 @@ namespace Calculator_2._0
         {
             private string GetInputForOperation()
             {
-                Console.WriteLine("Select operation: '+'\t '-'\t '*'\t '/' " +
-                                                     "\n \t\t  'b' - for count BMI," +
-                                                     "\n \t\t  'm' - for multiply matrixes" +
-                                                     "\n \t'c' to clear last value" +
-                                                     "\t\t 'h' - display history" +
-                                                     "\t\t'q' to exit");
+                Console.WriteLine("\n Select operation: '+'\t '-'\t '*'\t '/' " +
+                                                     " \n \t\t  'b' - for count BMI," +
+                                                     " \n \t\t  'm' - for multiply matrixes" +
+                                                     " \n \t'c' to clear last value" +
+                                                     " \t\t 'h' - display history" +
+                                                     " \t\t'q' to exit");
                 string input = Console.ReadLine();
                 quitProgram(input);
                 clearLastResult(input);
