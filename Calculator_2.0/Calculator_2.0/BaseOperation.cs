@@ -62,8 +62,8 @@ namespace Calculator_2._0
 
         public override void DisplayRes()
         {
-            BMIConsequence(Result);
-            calculation = $"BMI result : { Operand1} / ({Operand2}*2) = {Result} ";
+           string consequence = BMIConsequence(Result);
+            calculation = $"BMI result : { Operand1} / ({Operand2}*2) = {Result} \t It's {consequence} ";
             Console.WriteLine(calculation);
         }
         public string BMIConsequence(double Result)
@@ -79,7 +79,7 @@ namespace Calculator_2._0
             else
                 consequence = "Obese";
 
-            Console.WriteLine(consequence);
+           // Console.WriteLine(consequence);
             return consequence;
         }
     }
