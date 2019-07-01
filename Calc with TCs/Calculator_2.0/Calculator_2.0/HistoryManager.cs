@@ -8,7 +8,7 @@ namespace Calculator_2._0
 {
     public class HistoryManager
     {
-        List<string> history = new List<string>();
+        public List<string> history = new List<string>();
 
         public void AddLog(string record) => history.Add(record);
 

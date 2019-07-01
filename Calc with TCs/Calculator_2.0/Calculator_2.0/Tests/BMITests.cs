@@ -1,7 +1,10 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+ 
 
 namespace Calculator_2._0.Tests
 {
@@ -13,12 +16,13 @@ namespace Calculator_2._0.Tests
         MathRunnerMenu mathRunnerMenu;
         HistoryManager historyManager;
 
-        [SetUp]
+        [OneTimeSetUp]
             public void SetUp()
         {
             mainMenu = new MainMenu();
             mathRunnerMenu = new MathRunnerMenu();
             historyManager = new HistoryManager();
+            
         }
 
     [Test]
@@ -33,18 +37,22 @@ namespace Calculator_2._0.Tests
         }
 
         [Test]
+       
         public void BMIHistoryTest()
         {
             BaseOperation operation = new BMI();
             operation.Operand1 = 55;
             operation.Operand2 = 1.70;
             operation.Calculate();
+
             operation.DisplayRes();
 
             Assert.AreEqual("BMI result : 55 / (1.7*2) = 19.03 \t It's Normal weight ", 
                 operation.calculation);
         }
-       
+        //double[] BMIValidInputs = new double[] { 55, 1.70, 19.03,  };
+
+
         /*
         [Test]
         public void BMIConsequenceTest()
@@ -56,7 +64,7 @@ namespace Calculator_2._0.Tests
 
         }
         */
-        
+
         [Test, TestCaseSource("BMIConsequenceTest")]
         public void BMIConsequencesTest(string res, string expected)
         {
@@ -84,16 +92,7 @@ namespace Calculator_2._0.Tests
             Assert.AreEqual(a, mathRunnerMenu.GetOperand("7.14"));
         }
 
-        //compare history val with added ?????
-        [Test]
-        public void GetBMIvalueFromHistory()
-        {
-            BaseOperation operation = new BMI();
-            BMITest();
-            historyManager.AddLog(operation.calculation);
-             historyManager.PrintLog();
-            Assert.Equals("BMI result: 55 / (1.7 * 2) = 19.03 \t It's Normal weight ", );
-        }
+        
 
 
     }
