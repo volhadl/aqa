@@ -41,8 +41,9 @@ namespace Calculator_2._0.Tests
             Assert.AreEqual(expected, actual);
             
         }
+       
 
-        
+
         [Test]
         public void GetMatchOpvalueFromHistory()
         {
@@ -57,6 +58,22 @@ namespace Calculator_2._0.Tests
             var expected = "Mathematical result : 5 + 2 = 7";
             Assert.AreEqual(expected, actual);
         }
-        
+
+        [Test]
+        public void GetMatrixValueFromHistory()
+        {
+            BaseOperation operation = new MatrixMultiply();
+            operation.Matrix1 = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            operation.Matrix2 = new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            operation.Calculate();
+            operation.DisplayRes();
+            
+
+            historyManager.AddLog(operation.calculation);
+            var actual = historyManager.history.ElementAt(2);
+            var expected = "matrix multiplication result : {1,2,3},{4,5,6},{7,8,9} * {1,2},{3,4},{5,6} = {22,28},{49,64},{76,100}";
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }

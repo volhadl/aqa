@@ -135,7 +135,7 @@ namespace Calculator_2._0
             double B;
             while (!double.TryParse(A, out B))
             {
-                Console.Write("Input must be double number ! Try again");
+                Console.Write("Input must be double number ! Try again ");
                 A = Console.ReadLine();
             }
             return B;

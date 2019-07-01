@@ -83,17 +83,5 @@ namespace Calculator_2._0.Tests
 
         };
 
-        //bad, how i can check inputs
-        [Test]
-        public void ValidateInputsOutputsforBMI()
-        {
-            
-            double a = mathRunnerMenu.GetOperand("7.14");
-            Assert.AreEqual(a, mathRunnerMenu.GetOperand("7.14"));
-        }
-
-        
-
-
     }
 }
