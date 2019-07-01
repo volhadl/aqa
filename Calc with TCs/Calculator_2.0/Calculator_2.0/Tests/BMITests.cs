@@ -32,7 +32,7 @@ namespace Calculator_2._0.Tests
             operation.Operand1 = 55;
             operation.Operand2 = 1.70;
             operation.Calculate();
-            Assert.AreEqual(19.03, operation.Result);
+            Assert.AreEqual(19.03, operation.Result );
 
         }
 
@@ -47,8 +47,7 @@ namespace Calculator_2._0.Tests
 
             operation.DisplayRes();
 
-            Assert.AreEqual("BMI result : 55 / (1.7*2) = 19.03 \t It's Normal weight ", 
-                operation.calculation);
+            Assert.AreEqual("BMI result : 55 / (1.7*2) = 19.03 \t It's Normal weight ", operation.calculation);
         }
         //double[] BMIValidInputs = new double[] { 55, 1.70, 19.03,  };
 
@@ -64,12 +63,27 @@ namespace Calculator_2._0.Tests
 
         }
         */
+        /*
+        [Test, TestCaseSource("ValidInputsAndOutputs")]
+        public void ValidateInputsAndOutputs(string expected, string actual)
+        {
+            Assert.AreEqual(expected, mainMenu.GetInputForOperation(actual));
+        }
+
+        static object[] ValidInputsAndOutputs = new object[]
+        {
+            new string[] {"+", "+"},
+            new string[] {"-", "-"},
+            new string[] {"*", "*"},
+            new string[] {"/", "/"}
+        };*/
 
         [Test, TestCaseSource("BMIConsequenceTest")]
-        public void BMIConsequencesTest(string res, string expected)
+        public void BMIConsequencesTest(string expected, string actual)
         {
             BaseOperation operation = new BMI();
-            Assert.AreEqual(expected, operation.BMIConsequence(Convert.ToDouble(res)));
+
+            Assert.AreEqual(expected, operation.BMIConsequence());
         }
 
         static object[] BMIConsequenceTest = new object[]

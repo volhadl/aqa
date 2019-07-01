@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace Calculator_2._0.Tests
 {
@@ -64,20 +64,22 @@ namespace Calculator_2._0.Tests
         }
 
         
+        /*
+
         [Test, TestCaseSource("OutputOperationsTest")]
 
         public void OperationsTest(double expected, BaseOperation operation)
         {
             
             operation.Calculate();
-            
+            //CollectionAssert.Contains(IEnumerable expected, object actual);
             Assert.AreEqual(expected,  operation.Result);
 
         }//как добавить коллекцию в юнит
 
        
 
-        static IDictionary<double, BaseOperation> OutputOperationsTest = new Dictionary<double, BaseOperation>()
+       public static IDictionary<double, BaseOperation> OutputOperationsTest = new Dictionary<double, BaseOperation>()
         {
 
             {11, new Add()
@@ -90,6 +92,6 @@ namespace Calculator_2._0.Tests
                 Operand1 = 2,
                 Operand2 = 3
             } }
-        };
+        };*/
     }
 }
