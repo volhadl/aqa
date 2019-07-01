@@ -16,12 +16,29 @@ namespace Calculator_2._0
         public int[,] MatrixResult { get; set; }
         public string calculation { get; set; }
 
+        public string consequence { get; set; }
         public abstract string Label { get; }
         public abstract void Calculate();
         public virtual void DisplayRes()
         {
             calculation = $"Mathematical result : { Operand1 } { Label} { Operand2} = { Result}";
             Console.WriteLine(calculation);
+        }
+        public string BMIConsequence(double Result)
+        {
+            string consequence;
+
+            if (Result <= 18.5)
+                consequence = "Underweight";
+            else if (Result > 18.5 && Result <= 25)
+                consequence = "Normal weight";
+            else if (Result > 25 && Result <= 30)
+                consequence = "Overweight";
+            else
+                consequence = "Obese";
+
+            // Console.WriteLine(consequence);
+            return consequence;
         }
 
     }
@@ -62,26 +79,11 @@ namespace Calculator_2._0
 
         public override void DisplayRes()
         {
-            string consequence = BMIConsequence(Result);
+            consequence = BMIConsequence(Result);
             calculation = $"BMI result : { Operand1} / ({Operand2}*2) = {Result} \t It's {consequence} ";
             Console.WriteLine(calculation);
         }
-        public string BMIConsequence(double Result)
-        {
-            string consequence;
-
-            if (Result <= 18.5)
-                consequence = "Underweight";
-            else if (Result > 18.5 && Result <= 25)
-                consequence = "Normal weight";
-            else if (Result > 25 && Result <= 30)
-                consequence = "Overweight";
-            else
-                consequence = "Obese";
-
-            // Console.WriteLine(consequence);
-            return consequence;
-        }
+        
     }
 
     public class MatrixMultiply : BaseOperation

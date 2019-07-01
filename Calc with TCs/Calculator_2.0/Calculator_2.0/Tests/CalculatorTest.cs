@@ -64,18 +64,20 @@ namespace Calculator_2._0.Tests
         }
 
         
-        [Test, TestCaseSource("Operations")]
-        public void MatchOperationsTest(double expected, BaseOperation operation)
+        [Test, TestCaseSource("OutputOperationsTest")]
+
+        public void OperationsTest(double expected, BaseOperation operation)
         {
+            
             operation.Calculate();
             
-            Assert.AreEqual( expected,  operation.Result);
+            Assert.AreEqual(expected,  operation.Result);
 
         }//как добавить коллекцию в юнит
 
        
 
-        static IDictionary<double, BaseOperation> Operations = new Dictionary<double, BaseOperation>()
+        static IDictionary<double, BaseOperation> OutputOperationsTest = new Dictionary<double, BaseOperation>()
         {
 
             {11, new Add()

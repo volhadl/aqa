@@ -17,7 +17,7 @@ namespace Calculator_2._0.Tests
         }
 
         [Test, TestCaseSource("MainMenuValidInputs")]
-        public void ValidateValidInputsTest(string input) //check inputs ftom menu
+        public void ValidateValidInputsTest(string input) //check inputs from menu
         {
             Assert.True(mainMenu.ValidateInputs(input), $"{input} is a valid input");
         }
@@ -25,25 +25,13 @@ namespace Calculator_2._0.Tests
 
 
         [Test, TestCaseSource("MainMenuInValidInputs")]
-        public void ValidateInValidInputsTest(string input) //check inputs ftom menu
+        public void ValidateInValidInputsTest(string input) //check inputs from menu
         {
             Assert.False(mainMenu.ValidateInputs(input), $"{input} is not a valid input");
         }
         static string[] MainMenuInValidInputs = new string[] { "0", "1", "5", "8", "9", "-1", "n", "x", "v" };
 
 
-
-        //i'd like to check exception message if sent incorrect input
-
-        [Test, TestCaseSource("MainMenuInValidInputs")]
-        public void ExceptionMessage(string input) //check inputs ftom menu
-        {
-
-            MyException ex = Assert.Throws<MyException>(
-      delegate { throw new MyException("message"); });
-            Assert.IsFalse(input, "There is no such function. Please try again.");
-        }
-       
        
 
     }
