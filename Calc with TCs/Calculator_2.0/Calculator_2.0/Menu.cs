@@ -98,8 +98,8 @@ namespace Calculator_2._0
 
     public class MathRunnerMenu : BaseMenu
     {
-        double input_1;
-        double input_2;
+       public double input_1;
+        public double input_2;
         public void SetInputsForMathOperation(BaseOperation operation)
         {
             if (UseLastValue)
@@ -117,27 +117,28 @@ namespace Calculator_2._0
 
         public void SetInputsForBMI(BaseOperation operation)
         {
-            input_1 = GetOperand("Input YOUR weight in kg: ");
+            Console.WriteLine("Input YOUR weight in kg: ");
+            string A = Console.ReadLine();
+            double input_1 = GetOperand(A);
             operation.Operand1 = input_1;
 
-            input_2 = GetOperand("Input YOUR height in m: ");
+            Console.WriteLine("Input YOUR height in kg: ");
+             A = Console.ReadLine();
+            double input_2 = GetOperand(A);
             operation.Operand2 = input_2;
         }
 
 
-        public double GetOperand(string input)
+        public double GetOperand(string A)
         {
 
-            double OperandInt;
-            Console.WriteLine(input);
-            string operand = Console.ReadLine();  //get new
-            while (!double.TryParse(operand, out OperandInt))
+            double B;
+            while (!double.TryParse(A, out B))
             {
-                Console.Write("Input must be double number !");
-                Console.WriteLine(input);
-                operand = Console.ReadLine();
+                Console.Write("Input must be double number ! Try again");
+                A = Console.ReadLine();
             }
-            return double.Parse(operand);
+            return B;
 
         }
     }

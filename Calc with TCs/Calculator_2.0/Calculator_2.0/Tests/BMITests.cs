@@ -6,17 +6,22 @@ using System.Text;
 namespace Calculator_2._0.Tests
 {
     [TestFixture]
+    
     class BMITests
     {
         MainMenu mainMenu;
+        MathRunnerMenu mathRunnerMenu;
+        HistoryManager historyManager;
 
         [SetUp]
-        public void SetUp()
+            public void SetUp()
         {
             mainMenu = new MainMenu();
+            mathRunnerMenu = new MathRunnerMenu();
+            historyManager = new HistoryManager();
         }
 
-        [Test]
+    [Test]
         public void BMITest()
         {
             BaseOperation operation = new BMI();
@@ -52,15 +57,14 @@ namespace Calculator_2._0.Tests
         }
         */
         
-        [Test, TestCaseSource("ValidInputsAndOutputs")]
-        public void BMIConsequenceTestSec(string res, string expected)
+        [Test, TestCaseSource("BMIConsequenceTest")]
+        public void BMIConsequencesTest(string res, string expected)
         {
             BaseOperation operation = new BMI();
-            string b = operation.BMIConsequence(Convert.ToDouble(res));
-            Assert.AreEqual(expected, b);
+            Assert.AreEqual(expected, operation.BMIConsequence(Convert.ToDouble(res)));
         }
 
-        static object[] ValidInputsAndOutputs = new object[]
+        static object[] BMIConsequenceTest = new object[]
         {
             new string[] { "18.5", "Underweight"},
             new string[] { "18.51", "Normal weight"},
@@ -70,5 +74,27 @@ namespace Calculator_2._0.Tests
             new string[] { "30.01", "Obese"},
 
         };
+
+        //bad, how i can check inputs
+        [Test]
+        public void ValidateInputsOutputsforBMI()
+        {
+            
+            double a = mathRunnerMenu.GetOperand("7.14");
+            Assert.AreEqual(a, mathRunnerMenu.GetOperand("7.14"));
+        }
+
+        //compare history val with added ?????
+        [Test]
+        public void GetBMIvalueFromHistory()
+        {
+            BaseOperation operation = new BMI();
+            BMITest();
+            historyManager.AddLog(operation.calculation);
+             historyManager.PrintLog();
+            Assert.Equals("BMI result: 55 / (1.7 * 2) = 19.03 \t It's Normal weight ", );
+        }
+
+
     }
 }
