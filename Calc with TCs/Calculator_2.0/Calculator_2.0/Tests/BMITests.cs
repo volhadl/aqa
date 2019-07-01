@@ -36,7 +36,7 @@ namespace Calculator_2._0.Tests
             operation.Calculate();
             operation.DisplayRes();
 
-            Assert.AreEqual("BMI result : 55 / (1,7*2) = 19,03 \t It's Normal weight ", 
+            Assert.AreEqual("BMI result : 55 / (1.7*2) = 19.03 \t It's Normal weight ", 
                 operation.calculation);
         }
         

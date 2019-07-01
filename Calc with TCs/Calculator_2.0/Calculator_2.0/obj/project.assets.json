@@ -5849,23 +5849,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\msdlu\\.nuget\\packages\\": {},
+    "C:\\Users\\volha.dluhakanskaya\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\msdlu\\source\\repos\\Calc with TCs\\Calculator_2.0\\Calculator_2.0\\Calculator_2.0.csproj",
+      "projectUniqueName": "C:\\Users\\volha.dluhakanskaya\\Desktop\\AQA tasks\\Calc with TCs\\Calculator_2.0\\Calculator_2.0\\Calculator_2.0.csproj",
       "projectName": "Calculator_2.0",
-      "projectPath": "C:\\Users\\msdlu\\source\\repos\\Calc with TCs\\Calculator_2.0\\Calculator_2.0\\Calculator_2.0.csproj",
-      "packagesPath": "C:\\Users\\msdlu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\msdlu\\source\\repos\\Calc with TCs\\Calculator_2.0\\Calculator_2.0\\obj\\",
+      "projectPath": "C:\\Users\\volha.dluhakanskaya\\Desktop\\AQA tasks\\Calc with TCs\\Calculator_2.0\\Calculator_2.0\\Calculator_2.0.csproj",
+      "packagesPath": "C:\\Users\\volha.dluhakanskaya\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\volha.dluhakanskaya\\Desktop\\AQA tasks\\Calc with TCs\\Calculator_2.0\\Calculator_2.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\msdlu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\volha.dluhakanskaya\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
