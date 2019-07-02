@@ -32,7 +32,5 @@ namespace Calculator_2._0.Tests
         static string[] MainMenuInValidInputs = new string[] { "0", "1", "5", "8", "9", "-1", "n", "x", "v" };
 
 
-       
-
     }
 }

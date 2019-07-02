@@ -114,37 +114,36 @@ namespace Calculator_2._0
             input_2 = GetOperand("Input 2nd number: ");
             operation.Operand2 = input_2;
         }
-
-            public void SetInputsForBMI (BaseOperation operation)
+        
+        public void SetInputsForBMI(BaseOperation operation)
         {
-                Console.WriteLine("Input YOUR weight in kg: ");
-                string A = Console.ReadLine();
-                input_1 = GetOperand(A);
-                operation.Operand1 = input_1;
+            
+            Console.WriteLine("Input YOUR weight in kg: ");
+            input_1 = GetOperand(Console.ReadLine());
+            operation.Operand1 = input_1;
 
-                Console.WriteLine("Input YOUR height in m: ");
-                A = Console.ReadLine();
-                input_2 = GetOperand("Input YOUR height in m: ");
-                operation.Operand2 = input_2;
+           
+            Console.WriteLine("Input YOUR height in m: ");
+            input_2 = GetOperand(Console.ReadLine());
+            operation.Operand2 = input_2;
         }
-       
+        
 
-        public double GetOperand(string A)
+        public double GetOperand(string input)
         {
-
-            double B;
-            while (!double.TryParse(A, out B))
+            Console.WriteLine(input);
+            double OperandInt;
+            while (!double.TryParse(input, out OperandInt))
             {
-                Console.Write("Input must be double number ! Try again ");
-                A = Console.ReadLine();
+                Console.Write("Input must be double number !");
+                input = Console.ReadLine();
             }
-            return B;
-
+            return OperandInt;
         }
+
     }
     public class MathMatrixRunnerMenu : BaseMenu
     {
-        
         public int GetOperandInt(string input)
         {
             int OperandInt;

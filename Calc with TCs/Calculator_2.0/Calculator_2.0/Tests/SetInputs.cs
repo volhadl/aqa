@@ -19,18 +19,15 @@ namespace Calculator_2._0.Tests
         }
 
 
-        //bad, how i can check inputs :(
+        //bad, how i can check inputs 
         
         [Test]
-        public void ValidateInputsOutputsforBMI()
+        public void ValidateGetOperandMethod()
         {
-
-            double a = mathRunnerMenu.GetOperand("7.14");
-            Assert.AreEqual(7.14, a);
+            var a = mathRunnerMenu.GetOperand("7.14");
+            bool outputType = a.GetType() == typeof(double);
+            Assert.AreEqual(true, outputType);
         }
-        /*
-        [Test, TestCaseSource("ValidateInputsOutputsforBMI")]
-        public void InputsOutputsforBMI(string expected) => mathRunnerMenu.GetOperand(expected);
-        static string[] ValidateInputsOutputsforBMI = new string[] { "nngfn", "2" };*/
+        
     }
 }

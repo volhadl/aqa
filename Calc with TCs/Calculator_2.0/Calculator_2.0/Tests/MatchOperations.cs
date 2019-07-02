@@ -10,6 +10,18 @@ namespace Calculator_2._0.Tests
     [TestFixture]
     class MatchOperations
     {
+        MainMenu mainMenu;
+        MathRunnerMenu mathRunnerMenu;
+        
+
+        [SetUp]
+        public void SetUp()
+        {
+            mainMenu = new MainMenu();
+            mathRunnerMenu = new MathRunnerMenu();
+            
+        }
+
         [Test]
         public void DivideTest()
         {
@@ -45,9 +57,9 @@ namespace Calculator_2._0.Tests
                 delegate { throw new NullReferenceException("You cannot devide on 0"); });
                 Assert.That(ex.Message, Is.EqualTo("You cannot devide on 0"));
             }
-            
-
         }
+
+      
 
         [Test]
         public void MatchOpHistoryTest()

@@ -5,11 +5,8 @@ using System.Linq;
 
 namespace Calculator_2._0.Tests
 {
-
-
-
     [TestFixture]
-    class CalculatorTestFirst
+    class zThatsForOlgaDontlook
     {
         MainMenu mainMenu;
 

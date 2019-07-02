@@ -9,11 +9,13 @@ namespace Calculator_2._0.Tests
     class GetInputForOperationTest
     {
         MainMenu mainMenu;
+        MathRunnerMenu mathRunnerMenu;
 
         [SetUp]
         public void SetUp()
         {
             mainMenu = new MainMenu();
+            mathRunnerMenu = new MathRunnerMenu();
         }
 
         [Test, TestCaseSource("QuiteValidateInputs")]
@@ -49,6 +51,47 @@ namespace Calculator_2._0.Tests
             
         }
         static string[] ExceptionInValidInputs = new string[] { "0", "1", "5", "8", "9", "-1", "n", "x", "v" };
+
+
+        [Test]
+        public void ExitException()
+        {
+
+            try
+            {
+                mainMenu.GetInputForOperation("q");
+            }
+            catch (ExitException ex)
+            {
+                Assert.That(ex.Message, Is.EqualTo("See you next time..."));
+            }
+            
+        }
+
+
+        //last value is available to clean
+        //Operand1 get result
+        [Test]
+        public void ValidateClear()
+        {
+            /*
+            BaseOperation operation = new Add();
+            operation.Operand1 = 2;
+            operation.Operand2 = 3;
+            operation.Calculate();
+            mainMenu.GetInputForOperation("+");
+            mainMenu.UseLastValue = true;
+            mathRunnerMenu.LastResult = operation.Result;
+            mathRunnerMenu.SetInputsForMathOperation(operation);
+            */
+            mathRunnerMenu.input_1 = 2;
+            mathRunnerMenu.input_2 = 3;
+
+
+
+            Assert.AreEqual(5, operation.Operand1);
+
+        }
 
     }
 }
