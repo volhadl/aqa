@@ -1,0 +1,14 @@
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\bin\Debug\netcoreapp2.1\CalculatorO.deps.json
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\bin\Debug\netcoreapp2.1\CalculatorO.runtimeconfig.json
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\bin\Debug\netcoreapp2.1\CalculatorO.runtimeconfig.dev.json
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\bin\Debug\netcoreapp2.1\CalculatorO.dll
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\obj\Debug\netcoreapp2.1\CalculatorO.csprojAssemblyReference.cache
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\obj\Debug\netcoreapp2.1\CalculatorO.csproj.CoreCompileInputs.cache
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\obj\Debug\netcoreapp2.1\CalculatorO.AssemblyInfoInputs.cache
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\obj\Debug\netcoreapp2.1\CalculatorO.AssemblyInfo.cs
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\bin\Debug\netcoreapp2.1\CalculatorO.pdb
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\obj\Debug\netcoreapp2.1\CalculatorO.dll
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\obj\Debug\netcoreapp2.1\CalculatorO.pdb
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.dll
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.pdb
+C:\Users\volha.dluhakanskaya\source\repos\CalculatorO\CalculatorO\bin\Debug\netcoreapp2.1\nunit.engine.netstandard.dll
